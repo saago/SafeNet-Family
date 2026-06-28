@@ -5,8 +5,6 @@
 
 A free, browser-independent content filter for a Windows 11 home PC. It does **not** depend on any single browser — it filters at the DNS, hosts-file, OS-policy, and firewall levels, so it covers Edge, Chrome, Firefox, Brave, Opera, and any future browser, plus apps.
 
-> **⚠️ IMPORTANT:** This is a WORK PC. Do not install here. Copy the whole `SafeNet-Family` folder to your **home** PC and run it there.
-
 ---
 
 ## 🔒 What it does (Defence in Depth)
