@@ -100,3 +100,14 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 - If your home network uses a local DNS server (e.g. Pi-hole) you want to keep,
   install **without** `-LockDownDNS`.
 - Execution policy errors? Run installs with `powershell -ExecutionPolicy Bypass -File <script>`.
+
+---
+
+## Support & Credits
+
+Developed by **Netanel Elhadad**.
+
+If this tool helped you secure your home network and protect your family, consider supporting the project!
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/netanelelhadad)
+
