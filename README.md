@@ -45,7 +45,7 @@ Right-click **`Uninstall.ps1`** and select **Run with PowerShell**. This restore
 
 ## ⚠️ Honest Limitations (Please Read)
 
-You mentioned everyone on the PC has Administrator rights and you want to block everyone, including yourself. Be aware:
+Everyone on the PC has Administrator rights and you want to block everyone, including yourself. Be aware:
 
 *   **Admin Override:** Anything an Administrator sets, they can undo. The hourly re-apply task reverts accidental changes but is not a lock against a determined admin user.
 *   **Hermetic Setup:** Create a **separate Administrator account** with a private password. Demote everyday accounts to **Standard user**. Standard users cannot change DNS, edit hosts files, or alter policies.
