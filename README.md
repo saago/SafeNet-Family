@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="2026-06-30_15-55-43.png" alt="SafeNet-Family GUI Screenshot" width="400" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-  
   <br><br>
 
   # 🛡️ SafeNet-Family
@@ -32,7 +30,7 @@ A free, browser-independent content filter for a Windows 11 home PC. It does **n
 You can install SafeNet-Family using the **Graphical User Interface (GUI)** or via standard PowerShell scripts.
 
 ### 🎨 Option 1: Using the GUI (Recommended)
-1. Download the pre-compiled **`SafeNet-GUI.exe`** (Hebrew) or **`SafeNet-GUI-eng.exe`** (English) from the [GitHub Releases page](https://github.com/YOUR_USERNAME/SafeNet-Family/releases).
+1. Download the pre-compiled **`SafeNet-Family-heb.exe`** (Hebrew) or **`SafeNet-Family-eng.exe`** (English).
 2. Run the `.exe` file.
 3. Select your preferred YouTube restriction mode (Strict or Moderate).
 4. Click the install button (**"התקנה / עדכון"** / **"Install / Update"**) and approve the Administrator (UAC) prompt.
