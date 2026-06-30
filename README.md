@@ -32,14 +32,14 @@ A free, browser-independent content filter for a Windows 11 home PC. It does **n
 You can install SafeNet-Family using the **Graphical User Interface (GUI)** or via standard PowerShell scripts.
 
 ### 🎨 Option 1: Using the GUI (Recommended)
-1. Download the pre-compiled **`SafeNet-GUI.exe`** from the [GitHub Releases page](https://github.com/YOUR_USERNAME/SafeNet-Family/releases).
+1. Download the pre-compiled **`SafeNet-GUI.exe`** (Hebrew) or **`SafeNet-GUI-eng.exe`** (English) from the [GitHub Releases page](https://github.com/YOUR_USERNAME/SafeNet-Family/releases).
 2. Run the `.exe` file.
 3. Select your preferred YouTube restriction mode (Strict or Moderate).
-4. Click **"התקנה / עדכון" (Install/Update)** and approve the Administrator (UAC) prompt.
+4. Click the install button (**"התקנה / עדכון"** / **"Install / Update"**) and approve the Administrator (UAC) prompt.
 5. You can use the GUI anytime to check the status or uninstall the filter.
 
 > [!TIP]
-> *(If you prefer to run the GUI from source instead of the `.exe`, simply run `python .\SafeNet-GUI.py` after installing `customtkinter` via pip).*
+> *(If you prefer to run the GUI from source instead of the `.exe`, run `python .\SafeNet-GUI.py` for Hebrew or `python .\SafeNet-GUI-eng.py` for English after installing `customtkinter` via pip).*
 
 ### 💻 Option 2: Using PowerShell Scripts
 1. Copy this whole folder somewhere on the home PC, e.g. `C:\SafeNet-Family`.
@@ -87,8 +87,10 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 
 | File | Purpose |
 |------|---------|
-| `SafeNet-GUI.py`  | Modern Python graphical interface to manage installation and status. |
-| `SafeNet-GUI.exe` | Compiled executable of the GUI (downloadable from GitHub Releases). |
+| `SafeNet-GUI.py`  | Modern Hebrew graphical interface to manage installation and status. |
+| `SafeNet-GUI-eng.py` | Modern English graphical interface to manage installation and status. |
+| `SafeNet-GUI.exe` | Compiled executable of the Hebrew GUI (downloadable from GitHub Releases). |
+| `SafeNet-GUI-eng.exe` | Compiled executable of the English GUI (downloadable from GitHub Releases). |
 | `Install.ps1`     | Applies everything + creates the auto-reapply task. Self-elevates. |
 | `Apply-Filter.ps1`| The actual enforcement (idempotent). Run by the scheduled task. |
 | `Uninstall.ps1`   | Restores the PC to its prior state. |
