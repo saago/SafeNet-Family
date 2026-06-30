@@ -5,6 +5,10 @@
 
 A free, browser-independent content filter for a Windows 11 home PC. It does **not** depend on any single browser — it filters at the DNS, hosts-file, OS-policy, and firewall levels, so it covers Edge, Chrome, Firefox, Brave, Opera, and any future browser, plus apps.
 
+
+[![Ko-fi](https://img.shields.io/badge/☕_Buy_Me_a_Coffee-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/netanelelhadad)
+[![Support](https://img.shields.io/badge/❤️_Support_This_Project-FF5E5B?style=for-the-badge)](https://ko-fi.com/netanelelhadad)
+
 ---
 
 ## 🔒 What it does (Defence in Depth)
