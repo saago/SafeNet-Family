@@ -29,19 +29,11 @@ A free, browser-independent content filter for a Windows 11 home PC. It does **n
 
 You can install SafeNet-Family using the **Graphical User Interface (GUI)** or via standard PowerShell scripts.
 
-### 🎨 Option 1: Using the GUI (Recommended)
+### 🎨 Option 1: Using the GUI (Recommended - Python Source Code Only)
 
-<div align="center">
+#### ⚠️ Important: Use Python Source Code Directly
 
-[![Download Hebrew Version](https://img.shields.io/badge/⬇️_Download_Hebrew_Version-0078D4?style=for-the-badge&logo=windows&logoColor=white)](#)
-&nbsp;&nbsp;
-[![Download English Version](https://img.shields.io/badge/⬇️_Download_English_Version-28a745?style=for-the-badge&logo=windows&logoColor=white)](#)
-
-</div>
-
-#### ⚠️ Important: Run Python GUI Directly (No .exe)
-
-**Do NOT download or run `.exe` files.** They may be flagged as viruses by Windows Defender. Instead, use the source code directly:
+**Do NOT download or run `.exe` files.** Executables compiled by PyInstaller are often flagged as viruses by antivirus software. Instead, use the source code directly:
 
 1. **Install required packages:**
    ```powershell
@@ -108,8 +100,6 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 |------|---------|
 | `SafeNet-GUI-heb.py`  | Modern Hebrew graphical interface to manage installation and status (run with: `python .\SafeNet-GUI-heb.py`). |
 | `SafeNet-GUI-eng.py`  | Modern English graphical interface to manage installation and status (run with: `python .\SafeNet-GUI-eng.py`). |
-| ~~`SafeNet-Family-heb.exe`~~ | ❌ **Removed** - Use Python source instead. Executables are often flagged as viruses by antivirus software. |
-| ~~`SafeNet-Family-eng.exe`~~ | ❌ **Removed** - Use Python source instead. Executables are often flagged as viruses by antivirus software. |
 | `Install.ps1`     | Applies everything + creates the auto-reapply task. Self-elevates. |
 | `Apply-Filter.ps1`| The actual enforcement (idempotent). Run by the scheduled task. |
 | `Uninstall.ps1`   | Restores the PC to its prior state. |
@@ -124,4 +114,4 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 - If a legitimate site is wrongly blocked, it's almost always the DNS category filter — you can switch DNS to Cloudflare's `1.1.1.2` (malware-only) by editing `$FilterDnsV4` in `Apply-Filter.ps1`, but that stops blocking adult content.
 - If your home network uses a local DNS server (e.g. Pi-hole) you want to keep, install **without** `-LockDownDNS`.
 - Execution policy errors? Run installs with `powershell -ExecutionPolicy Bypass -File <script>`.
-- **Antivirus warnings:** If Windows Defender or another AV flags the `.exe` files as viruses (false positives), simply use the Python source code instead. The executables are compiled by PyInstaller and can be misidentified without proper digital signatures, which require paid certificates from authorities like Verisign/Digicert that individual developers typically don't have access to.
+- **Antivirus warnings:** If Windows Defender or another AV flags files as viruses, simply use the Python source code instead (see above). Compiled executables without digital signatures are often misidentified.
