@@ -33,9 +33,9 @@ You can install SafeNet-Family using the **Graphical User Interface (GUI)** or v
 
 <div align="center">
 
-[![Download Hebrew Version](https://img.shields.io/badge/⬇️_Download_Hebrew_Version-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/releases/latest/download/SafeNet-Family-heb.exe)
+[![Download Hebrew Version](https://img.shields.io/badge/⬇️_Download_Hebrew_Version-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/blob/main/SafeNet-Family-heb.exe)
 &nbsp;&nbsp;
-[![Download English Version](https://img.shields.io/badge/⬇️_Download_English_Version-28a745?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/releases/latest/download/SafeNet-Family-eng.exe)
+[![Download English Version](https://img.shields.io/badge/⬇️_Download_English_Version-28a745?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/blob/main/SafeNet-Family-eng.exe)
 
 </div>
 
@@ -96,8 +96,8 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 |------|---------|
 | `SafeNet-GUI.py`  | Modern Hebrew graphical interface to manage installation and status. |
 | `SafeNet-GUI-eng.py` | Modern English graphical interface to manage installation and status. |
-| `SafeNet-GUI.exe` | Compiled executable of the Hebrew GUI (downloadable from GitHub Releases). |
-| `SafeNet-GUI-eng.exe` | Compiled executable of the English GUI (downloadable from GitHub Releases). |
+| `SafeNet-Family-heb.exe` | Compiled executable of the Hebrew GUI (downloadable from GitHub Releases). |
+| `SafeNet-Family-eng.exe` | Compiled executable of the English GUI (downloadable from GitHub Releases). |
 | `Install.ps1`     | Applies everything + creates the auto-reapply task. Self-elevates. |
 | `Apply-Filter.ps1`| The actual enforcement (idempotent). Run by the scheduled task. |
 | `Uninstall.ps1`   | Restores the PC to its prior state. |
