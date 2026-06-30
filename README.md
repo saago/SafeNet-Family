@@ -1,9 +1,9 @@
 <div align="center">
-  <br><br>
-
+  <br><br> 
+  
   # 🛡️ SafeNet-Family
   **System-wide adult-content filtering for Windows**
-</div>
+ </div>
 
 [![Ko-fi](https://img.shields.io/badge/☕_Buy_Me_a_Coffee-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/netanelelhadad)
 [![Support](https://img.shields.io/badge/❤️_Support_This_Project-FF5E5B?style=for-the-badge)](https://ko-fi.com/netanelelhadad)
@@ -33,22 +33,34 @@ You can install SafeNet-Family using the **Graphical User Interface (GUI)** or v
 
 <div align="center">
 
-[![Download Hebrew Version](https://img.shields.io/badge/⬇️_Download_Hebrew_Version-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/blob/main/SafeNet-Family-heb.exe)
+[![Download Hebrew Version](https://img.shields.io/badge/⬇️_Download_Hebrew_Version-0078D4?style=for-the-badge&logo=windows&logoColor=white)](#)
 &nbsp;&nbsp;
-[![Download English Version](https://img.shields.io/badge/⬇️_Download_English_Version-28a745?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/saago/SafeNet-Family/blob/main/SafeNet-Family-eng.exe)
+[![Download English Version](https://img.shields.io/badge/⬇️_Download_English_Version-28a745?style=for-the-badge&logo=windows&logoColor=white)](#)
 
 </div>
 
-1. Download the version you prefer using the buttons above.
-2. Run the `.exe` file.
-3. Select your preferred YouTube restriction mode (Strict or Moderate).
-4. Click the install button (**"התקנה / עדכון"** / **"Install / Update"**) and approve the Administrator (UAC) prompt.
-5. You can use the GUI anytime to check the status or uninstall the filter.
+#### ⚠️ Important: Run Python GUI Directly (No .exe)
 
-> [!TIP]
-> *(If you prefer to run the GUI from source instead of the `.exe`, run `python .\SafeNet-GUI.py` for Hebrew or `python .\SafeNet-GUI-eng.py` for English after installing `customtkinter` via pip).*
+**Do NOT download or run `.exe` files.** They may be flagged as viruses by Windows Defender. Instead, use the source code directly:
 
-### 💻 Option 2: Using PowerShell Scripts
+1. **Install required packages:**
+   ```powershell
+   pip install customtkinter requests psutil pywin32 wmi colorama
+   ```
+   
+2. **Run the GUI for your language:**
+   - **Hebrew version:** `python .\SafeNet-GUI-heb.py`
+   - **English version:** `python .\SafeNet-GUI-eng.py`
+
+3. In the GUI:
+   - Select your preferred YouTube restriction mode (Strict or Moderate).
+   - Click the install button (**"התקנה / עדכון"** / **"Install / Update"**) and approve the Administrator (UAC) prompt.
+4. You can use the GUI anytime to check the status or uninstall the filter.
+
+> [!TIP]  
+> This source-code approach avoids false positives from antivirus software that often flag PyInstaller-generated executables as malware without scanning their contents.
+
+### 💻 Option 2: Using PowerShell Scripts (No GUI needed)
 1. Copy this whole folder somewhere on the home PC, e.g. `C:\SafeNet-Family`.
 2. Right-click **`Install.ps1`** → **Run with PowerShell**. Approve the Administrator (UAC) prompt.
    - Or, for the strongest setting:
@@ -94,10 +106,10 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 
 | File | Purpose |
 |------|---------|
-| `SafeNet-GUI.py`  | Modern Hebrew graphical interface to manage installation and status. |
-| `SafeNet-GUI-eng.py` | Modern English graphical interface to manage installation and status. |
-| `SafeNet-Family-heb.exe` | Compiled executable of the Hebrew GUI (downloadable from GitHub Releases). |
-| `SafeNet-Family-eng.exe` | Compiled executable of the English GUI (downloadable from GitHub Releases). |
+| `SafeNet-GUI-heb.py`  | Modern Hebrew graphical interface to manage installation and status (run with: `python .\SafeNet-GUI-heb.py`). |
+| `SafeNet-GUI-eng.py`  | Modern English graphical interface to manage installation and status (run with: `python .\SafeNet-GUI-eng.py`). |
+| ~~`SafeNet-Family-heb.exe`~~ | ❌ **Removed** - Use Python source instead. Executables are often flagged as viruses by antivirus software. |
+| ~~`SafeNet-Family-eng.exe`~~ | ❌ **Removed** - Use Python source instead. Executables are often flagged as viruses by antivirus software. |
 | `Install.ps1`     | Applies everything + creates the auto-reapply task. Self-elevates. |
 | `Apply-Filter.ps1`| The actual enforcement (idempotent). Run by the scheduled task. |
 | `Uninstall.ps1`   | Restores the PC to its prior state. |
@@ -112,3 +124,4 @@ You told me **everyone on the PC has Administrator rights** and you want to bloc
 - If a legitimate site is wrongly blocked, it's almost always the DNS category filter — you can switch DNS to Cloudflare's `1.1.1.2` (malware-only) by editing `$FilterDnsV4` in `Apply-Filter.ps1`, but that stops blocking adult content.
 - If your home network uses a local DNS server (e.g. Pi-hole) you want to keep, install **without** `-LockDownDNS`.
 - Execution policy errors? Run installs with `powershell -ExecutionPolicy Bypass -File <script>`.
+- **Antivirus warnings:** If Windows Defender or another AV flags the `.exe` files as viruses (false positives), simply use the Python source code instead. The executables are compiled by PyInstaller and can be misidentified without proper digital signatures, which require paid certificates from authorities like Verisign/Digicert that individual developers typically don't have access to.
