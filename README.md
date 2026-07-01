@@ -52,7 +52,11 @@ You can install SafeNet-Family using the **Graphical User Interface (GUI)** or v
    ```powershell
    pip install customtkinter
    ```
-3. **Run the GUI for your preferred language:**
+   or
+   ```powershell
+   pip install customtkinter --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org
+   ```
+4. **Run the GUI for your preferred language:**
    - **Hebrew version:**
      ```powershell
      python .\SafeNet-GUI-heb.py
@@ -61,10 +65,10 @@ You can install SafeNet-Family using the **Graphical User Interface (GUI)** or v
      ```powershell
      python .\SafeNet-GUI-eng.py
      ```
-4. In the GUI:
+5. In the GUI:
    - Select your preferred YouTube restriction mode (Strict or Moderate).
    - Click the install button (**"התקנה / עדכון"** / **"Install / Update"**) and approve the Administrator (UAC) prompt.
-5. You can use the GUI anytime to check the status or uninstall the filter.
+6. You can use the GUI anytime to check the status or uninstall the filter.
 
 > [!TIP]
 > Using the source code directly avoids false positives from antivirus software that often flag PyInstaller-generated executables as malware.
