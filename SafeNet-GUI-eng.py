@@ -132,7 +132,7 @@ class SafeNetApp(ctk.CTk):
             try:
                 process = subprocess.Popen(
                     cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, 
-                    text=True, creationflags=subprocess.CREATE_NO_WINDOW
+                    text=True, creationflags=subprocess.CREATE_NEW_CONSOLE
                 )
                 stdout, stderr = process.communicate()
                 
