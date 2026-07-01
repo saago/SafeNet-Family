@@ -29,10 +29,9 @@ $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIden
     ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "Requesting Administrator privileges..." -ForegroundColor Yellow
-    $argList = @('-NoProfile','-ExecutionPolicy','Bypass','-File',"`"$PSCommandPath`"",
-                 '-YouTubeMode', $YouTubeMode)
-    if ($LockDownDNS) { $argList += '-LockDownDNS' }
-    Start-Process -FilePath 'powershell.exe' -Verb RunAs -ArgumentList $argList
+    $argString = "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -YouTubeMode $YouTubeMode"
+    if ($LockDownDNS) { $argString += ' -LockDownDNS' }
+    Start-Process -FilePath 'powershell.exe' -Verb RunAs -ArgumentList $argString
     exit
 }
 
@@ -52,7 +51,7 @@ Write-Host "`n=== Installing SafeNet-Family ===" -ForegroundColor Cyan
 $applyArgs = @{
     YouTubeMode = $YouTubeMode
 }
-if ($LockDownDNS) { $applyArgs['LockDownDNS'] = $true }
+if ($LockDownDNS) { $applyArgs.LockDownDNS = $true }
 & $ApplyPath @applyArgs
 
 # 2. Create / refresh the scheduled task.
@@ -63,7 +62,8 @@ $action  = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $taskCmd
 
 $trigAtStartup = New-ScheduledTaskTrigger -AtStartup
 $trigHourly    = New-ScheduledTaskTrigger -Once -At (Get-Date) `
-                    -RepetitionInterval (New-TimeSpan -Hours 1)
+                    -RepetitionInterval (New-TimeSpan -Hours 1) `
+                    -RepetitionDuration (New-TimeSpan -Days 9999)
 
 $principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount -RunLevel Highest
 $settings  = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
