@@ -34,7 +34,7 @@ A free, browser-independent content filter for a Windows 11 home PC. It does **n
 ---
 
 ## 🚀 How to install
-
+📺 [Watch the tutorial video on YouTube](https://www.youtube.com/watch?v=DwLy2oD8uGY)
 > [!IMPORTANT]
 > **You must download or clone the entire repository** before running the GUI or the PowerShell scripts.
 > The GUI scripts (`SafeNet-GUI-heb.py` / `SafeNet-GUI-eng.py`) depend on the PowerShell scripts (`Install.ps1`, `Status.ps1`, `Uninstall.ps1`) that are located in the same folder.
